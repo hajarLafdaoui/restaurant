@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style>
+
+      body{
+        background-color: #cbdbd2 !important;
+      }
+      .container {
+        background-color: #fff;
+        max-width: 600px; /* Makes the form container narrower */
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Black shadow with some blur */
+        border-radius: 30px;
+        padding: 20px 30px;
+      }
+      .container h2{
+        color: #00ad54 ;
+        text-align: center;
+      }
+
+  label{
+      font-size: large;
+      font-weight: 500;
+      margin-right: 10px;
+
+  }
+
+  /*  */
+
+  .checkbox {
+  appearance: none;
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  border: 2px solid black;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.checkbox::before {
+  font-family: "Quicksand", sans-serif;
+  position: absolute;
+  bottom: -4px;
+  left: 1px;
+  content: "✔";
+  font-size: 40px;
+  color: #00ad54;
+  transform: scale(0);
+  transition: all 0.2s ease-in-out;
+}
+
+.checkbox:checked::before {
+  animation: zoom 0.5s ease-in-out;
+  transform: scale(1);
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0);
+  }
+
+  20% {
+    transform: scale(1.5);
+  }
+
+  40% {
+    transform: scale(0.5);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+
+  70% {
+    transform: scale(1.2);
+  }
+
+  90% {
+    transform: scale(0.8);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+  .HHH{
+    color: #666;
+    font-size: 18px;
+    /* margin-bottom: 22px; */
+  }
+  /*  */
+  .pay {
+    position: relative;
+    display: inline-block;
+    margin-left: 200px ;
+    padding: 10px 30px;
+    text-align: center;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-decoration: none;
+    color: #00ad54;
+    background: transparent;
+    cursor: pointer;
+    transition: ease-out 0.5s;
+    border: 2px solid #00ad54;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 0 #00ad54;
+  }
+
+  .pay:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #00ad54;
+  }
+
+  .pay:active {
+    transform: scale(0.9);
+  }
+    </style>
+    
+</head>
+<body>
+
+    <div class="container my-5">
+      
+        <h2 class="mb-3">Book a Table</h2>
+
+        <form action="book.php" method="post">
+            <div class="mb-4">
+                <label for="bookingTime" class="form-label">Time</label>
+                <select name="bookingTime" class="form-select" id="bookingTime">
+                    <option selected>Choose...</option>
+                    <option value="7pm">7:00 PM</option>
+                    <option value="8pm">8:00 PM</option>
+                    <option value="9pm">9:00 PM</option>
+                    <option value="9pm">10:00 PM</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="foodCategory" class="form-label">Food Category</label>
+                <select name="foodCategory" class="form-select" id="foodCategory">
+                    <option selected>Choose...</option>
+                    <option value="appetizers">Appetizers</option>
+                    <option value="entrees">Entrees</option>
+                    <option value="desserts">Desserts</option>
+                </select>
+            </div>
+            <div class="mb-4">
+                <label for="drinkCategory" class="form-label col-md-6">Drink Category</label>
+                <select name="drinkCategory" class="form-select col-md-6" id="drinkCategory">
+                    <option selected>Choose...</option>
+                    <option value="cocktails">Cocktails</option>
+                </select>
+            </div>
+             <div class="d-flex justify-content-center align-items-center">
+                <!-- <label  class="form-label HHH ">Are you sure this is your final decision?</label> -->
+                <!-- <input  class="checkbox" type="checkbox"> -->
+
+            </div>
+
+            
+            <button type="submit" class="pay"> payment
+            </button>
+
+        </form>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
